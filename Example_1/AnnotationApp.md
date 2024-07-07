@@ -85,26 +85,19 @@ For more details, please visit [How to Run Examples](https://docs.groupdocs.com/
 
 [Set Metered License](https://github.com/groupdocs-annotation/GroupDocs.Annotation-for-.NET/blob/master/Examples/GroupDocs.Annotation.Examples.CSharp/QuickStart/SetMeteredLicense.cs)
 
-<details>
-    <summary>Click to expand the code</summary>
-    <p>
-        <code>
-            <pre>
-            class SetMeteredLicense
-                {
-                    public static void Run()
-                    {
-                        string publicKey = "*****";
-                        string privateKey = "*****";
-                        Metered metered = new Metered();
-                        metered.SetMeteredKey(publicKey, privateKey);
-                        Console.WriteLine("License set successfully.");
-                    }
-                }
-            </pre>
-        </code>
-    </p>
-</details>
+````
+class SetMeteredLicense
+    {
+        public static void Run()
+        {
+            string publicKey = "*****";
+            string privateKey = "*****";
+            Metered metered = new Metered();
+            metered.SetMeteredKey(publicKey, privateKey);
+            Console.WriteLine("License set successfully.");
+        }
+    }
+````
 
 For more examples, please visit [our GitHub Repository](https://github.com/groupdocs-annotation/GroupDocs.Annotation-for-.NET/tree/master/Examples/GroupDocs.Annotation.Examples.CSharp/QuickStart).
 
@@ -113,29 +106,20 @@ For more examples, please visit [our GitHub Repository](https://github.com/group
 
 [Get File Info](https://github.com/groupdocs-annotation/GroupDocs.Annotation-for-.NET/blob/master/Examples/GroupDocs.Annotation.Examples.CSharp/BasicUsage/GetFileInfo.cs)
 
-<details>
-    <summary>Click to expand the code</summary>
-    <p>
-        <code>
-            <pre>
-                class GetFileInfo
-                    {
-                        public static void Run()
-                        {
-                            using (Annotator annotator = new Annotator(Constants.INPUT))
-                            {
-                                IDocumentInfo info = annotator.Document.GetDocumentInfo();
-                                Console.WriteLine("\nFile type: {0}\nNumber of pages: {1}\nDocument size: {2} bytes", info.FileType, info.PageCount, info.Size);
-                            }
-                            Console.WriteLine($"\nDocument info extracted successfully.");
-                        }
-                    }
-            </pre>
-        </code>
-    </p>
-</details>
-
-
+````
+class GetFileInfo
+    {
+        public static void Run()
+        {
+            using (Annotator annotator = new Annotator(Constants.INPUT))
+            {
+                IDocumentInfo info = annotator.Document.GetDocumentInfo();
+                Console.WriteLine("\nFile type: {0}\nNumber of pages: {1}\nDocument size: {2} bytes", info.FileType, info.PageCount, info.Size);
+            }
+            Console.WriteLine($"\nDocument info extracted successfully.");
+        }
+    }
+````
 
 For more examples, please visit [our GitHub Repository](https://github.com/groupdocs-annotation/GroupDocs.Annotation-for-.NET/tree/master/Examples/GroupDocs.Annotation.Examples.CSharp/BasicUsage).
 
@@ -144,30 +128,22 @@ For more examples, please visit [our GitHub Repository](https://github.com/group
 
 [Change Image Quality](https://github.com/groupdocs-annotation/GroupDocs.Annotation-for-.NET/blob/master/Examples/GroupDocs.Annotation.Examples.CSharp/AdvancedUsage/ChangeImageQuality.cs)
 
-<details>
-    <summary>Click to expand the code</summary>
-    <p>
-        <code>
-            <pre>
-        class ChangeImageQuality
+````
+class ChangeImageQuality
+{
+    public static void Run()
+    {
+        using (Annotator annotator = new Annotator("input.pdf-file")) // specify the path to the input PDF file
         {
-            public static void Run()
-            {
-                using (Annotator annotator = new Annotator("input.pdf-file")) // specify the path to the input PDF file
-                {
-    	            string dataDir = "input.pdf"; // specify the path to the input PDF file
-                    string data = "image.jpg"; // the path to the JPG file
-                    int pageNumber = 1; // set the page where the image will be inserted
-                    int imageQuality = 10; // set image quality
-                    annotator.Document.AddImageToDocument(dataDir, data, pageNumber, imageQuality);
-                }
-            }
+            string dataDir = "input.pdf"; // specify the path to the input PDF file
+            string data = "image.jpg"; // the path to the JPG file
+            int pageNumber = 1; // set the page where the image will be inserted
+            int imageQuality = 10; // set image quality
+            annotator.Document.AddImageToDocument(dataDir, data, pageNumber, imageQuality);
         }
-            </pre>
-        </code>
-    </p>
-</details>
-
+    }
+}
+````
 
 For more examples, please visit [our GitHub Repository](https://github.com/groupdocs-annotation/GroupDocs.Annotation-for-.NET/tree/master/Examples/GroupDocs.Annotation.Examples.CSharp/AdvancedUsage).
 
